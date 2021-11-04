@@ -10,3 +10,10 @@
 .counter:not(:last-child) {
   margin-bottom: 5px;
 }
+.counterBad {
+  margin-bottom: 12px;
+}
+.total,
+.percent {
+  font-weight: 600;
+}

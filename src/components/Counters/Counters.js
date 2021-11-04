@@ -4,11 +4,17 @@ import s from './Counters.module.css';
 
 const Counters = ({ good, neutral, bad, total, positivePercentage }) => (
   <div className={s.counters}>
-    <span className={s.counter}>Good: {good}</span>
-    <span className={s.counter}>Neutral: {neutral}</span>
-    <span className={s.counter}>Bad: {bad}</span>
-    <span className={s.counter}>Total: {total}</span>
-    <span className={s.counter}>Positive feedback: {positivePercentage}</span>
+    <span className={s.counter}>👍 Good: {good}</span>
+    <span className={s.counter}>✌ Neutral: {neutral}</span>
+    <span className={s.counterBad}>👎 Bad: {bad}</span>
+    <span className={s.counter}>
+      <span className={s.total}>Total: </span>
+      {total}
+    </span>
+    <span className={s.counter}>
+      <span className={s.percent}>Positive feedback: </span>
+      {positivePercentage}
+    </span>
   </div>
 );
 
