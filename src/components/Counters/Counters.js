@@ -5,7 +5,7 @@ import s from './Counters.module.css';
 const Counters = ({ good, neutral, bad, total, positivePercentage }) => (
   <div className={s.counters}>
     <span className={s.counter}>👍 Good: {good}</span>
-    <span className={s.counter}>✌ Neutral: {neutral}</span>
+    <span className={s.counter}>🤜 Neutral: {neutral}</span>
     <span className={s.counterBad}>👎 Bad: {bad}</span>
     <span className={s.counter}>
       <span className={s.total}>Total: </span>
