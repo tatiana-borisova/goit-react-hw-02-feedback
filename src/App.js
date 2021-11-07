@@ -21,17 +21,17 @@ class App extends Component {
     this.setState(prevState => ({ [feedbackKey]: prevState[feedbackKey] + 1 }));
   };
 
-  countTotalFeedback() {
+  countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
-  }
+  };
 
-  countPositiveFeedbackPercentage() {
+  countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     return this.countTotalFeedback()
-      ? Math.floor((good / this.countTotalFeedback()) * 100) + '%'
-      : 0 + '%';
-  }
+      ? `${Math.floor((good / this.countTotalFeedback()) * 100)}%`
+      : '0%';
+  };
 
   render() {
     return (
