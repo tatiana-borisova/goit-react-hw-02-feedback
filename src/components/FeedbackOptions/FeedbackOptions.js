@@ -2,42 +2,29 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import s from './FeedbackOptions.module.css';
 import colorMaker from '../../js/colorMaker';
+import theFirstLetterToUpperCase from '../../js/theFirstLetterToUpperCase';
 
 const btnStyle = { backgroundColor: colorMaker() };
 
-const FeedbackOptions = ({ onGoodClick, onNeutralClick, onBadClick }) => (
+const FeedbackOptions = ({ onLeaveFeedback, options }) => (
   <div className={s.buttons}>
-    <button
-      className={s.button}
-      type="button"
-      onClick={onGoodClick}
-      style={btnStyle}
-    >
-      Good
-    </button>
-    <button
-      className={s.button}
-      type="button"
-      onClick={onNeutralClick}
-      style={btnStyle}
-    >
-      Neutral
-    </button>
-    <button
-      className={s.button}
-      type="button"
-      onClick={onBadClick}
-      style={btnStyle}
-    >
-      Bad
-    </button>
+    {options.map(option => (
+      <button
+        key={option}
+        className={s.button}
+        type="button"
+        onClick={() => onLeaveFeedback(option)}
+        style={btnStyle}
+      >
+        {theFirstLetterToUpperCase(option)}
+      </button>
+    ))}
   </div>
 );
 
 FeedbackOptions.propTypes = {
-  onGoodClick: PropTypes.func.isRequired,
-  onNeutralClick: PropTypes.func.isRequired,
-  onBadClick: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
 };
 
 export default FeedbackOptions;
