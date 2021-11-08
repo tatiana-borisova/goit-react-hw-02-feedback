@@ -4,7 +4,7 @@ import s from './FeedbackOptions.module.css';
 import colorMaker from '../../js/colorMaker';
 import theFirstLetterToUpperCase from '../../js/theFirstLetterToUpperCase';
 
-const btnStyle = { backgroundColor: colorMaker() };
+export const btnStyle = { backgroundColor: colorMaker() };
 
 const FeedbackOptions = ({ onLeaveFeedback, options }) => (
   <div className={s.buttons}>

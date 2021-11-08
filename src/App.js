@@ -3,6 +3,7 @@ import Section from './components/Section';
 import FeedbackOptions from './components/FeedbackOptions';
 import Statistics from './components/Statistics';
 import Notification from './components/Notification';
+import ResetParameters from './components/ResetParameters';
 
 class App extends Component {
   static defaultProps = {
@@ -33,6 +34,10 @@ class App extends Component {
       : '0%';
   };
 
+  resetParameters = () => {
+    this.setState({ good: 0, neutral: 0, bad: 0 });
+  };
+
   render() {
     return (
       <div className="statistics">
@@ -54,6 +59,9 @@ class App extends Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           )}
+        </Section>
+        <Section>
+          <ResetParameters reset={this.resetParameters} />
         </Section>
       </div>
     );
