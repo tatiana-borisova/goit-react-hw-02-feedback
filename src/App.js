@@ -51,17 +51,17 @@ class App extends Component {
           {!this.countTotalFeedback() ? (
             <Notification message="No feedback given" />
           ) : (
-            <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
-            />
+            <>
+              <Statistics
+                good={this.state.good}
+                neutral={this.state.neutral}
+                bad={this.state.bad}
+                total={this.countTotalFeedback()}
+                positivePercentage={this.countPositiveFeedbackPercentage()}
+              />
+              <ResetParameters reset={this.resetParameters} />
+            </>
           )}
-        </Section>
-        <Section>
-          <ResetParameters reset={this.resetParameters} />
         </Section>
       </div>
     );
