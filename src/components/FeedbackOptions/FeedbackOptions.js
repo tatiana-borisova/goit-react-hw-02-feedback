@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import shortid from 'shortid';
 import s from './FeedbackOptions.module.css';
-import colorMaker from '../../js/colorMaker';
-import theFirstLetterToUpperCase from '../../js/theFirstLetterToUpperCase';
+import colorMaker from '../../helpers/colorMaker';
+import theFirstLetterToUpperCase from '../../helpers/theFirstLetterToUpperCase';
 
 export const btnStyle = { backgroundColor: colorMaker() };
 
@@ -10,7 +11,7 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => (
   <div className={s.buttons}>
     {options.map(option => (
       <button
-        key={option}
+        key={shortid.generate()}
         className={s.button}
         type="button"
         onClick={() => onLeaveFeedback(option)}
